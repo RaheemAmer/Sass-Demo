@@ -1,0 +1,29 @@
+@mixin flexCenter($direction, $background) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: $direction;
+    background: $background;
+}
+
+header {
+    @include flexCenter(column, yellow);
+    height: 100vh;
+    color: textColor;
+    button {
+        background-color: $primaryBtn;
+        &::before {
+            content: 'not ';
+        }
+        &::after {
+            content: ' text';
+        }
+        &:hover {
+            background-color: lightgreen;
+        }
+    }
+    p {
+        color: $textColor;
+    }
+}
